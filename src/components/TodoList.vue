@@ -7,7 +7,7 @@
           </div>
       </div>
       <p class="w-full flex flex-row mb-5">
-        <input v-model="newTask" class="basis-3/4 bg-transparent border-0 border-b-2 rounded-none p-3 focus:outline-none border-b-slate-900 text-gray-400 placeholder:ttext-gray-400 shadow-2xl" placeholder="Add a new task"/>
+        <input v-model="newTask" class="basis-3/4 bg-transparent border-0 border-b-2 rounded-none p-3 focus:outline-none border-b-slate-900 text-gray-400 placeholder:ttext-gray-400 shadow-2xl" @keyup.enter="addTodo" placeholder="Add a new task"/>
         <button @click="addTodo" class="ml-4 border-none p-4 px-6 shadow-2xl basis-1/4 bg-slate-900 text-gray-400 hover:text-gray-400 rounded-r-lg">Add</button>
       </p>
       <div v-for="(todo, n) in todoList" :key="todo" class="h-full">
