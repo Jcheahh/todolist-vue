@@ -16,7 +16,7 @@
           <EditForm :todo="todo" :saveEdit="saveEdit" />
         </div>
         <div v-else>
-          <AddForm :todo="todo" :index="n" :is_done="is_done" :editTodo="editTodo" :removeTodo="removeTodo" :completeTodo="completeTodo"/>
+          <Todo :todo="todo" :index="n" :is_done="is_done" :editTodo="editTodo" :removeTodo="removeTodo" :completeTodo="completeTodo"/>
         </div>
       </div>
     </div>
@@ -24,12 +24,12 @@
 </template>
 
 <script>
-import AddForm from './AddForm.vue'
+import Todo from './Todo.vue'
 import EditForm from './EditForm.vue';
 export default {
   name: 'TodoList',
   components: {
-    AddForm,
+    Todo,
     EditForm
 },
   data() {

@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'AddForm',
+  name: 'Todo',
   props: {
       todo: String,
       index: Number,
