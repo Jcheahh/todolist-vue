@@ -1,12 +1,16 @@
 <template>
-  <!-- TOOD better ui and css -->
-    <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
-      <h2 class="text-xl font-bold">TodoList</h2>
-      <p class="flex mt-4">
-        <input v-model="newTask" class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" placeholder="Add Todo"/>
-        <button @click="addTodo"  class="btn ml-4 border-none p-4 px-6 shadow-2xl">Add</button>
+  <div class="flex justify-center items-baseline h-full pt-4 sm:p-16">
+    <div class="w-[30rem] h-full m-4 flex flex-col">
+      <div class="w-full mb-12 flex justify-between items-center">
+          <div>
+              <h1 class="text-sm sm:text-2xl font-bold inline-block text-gray-400 ml-6">To Do List</h1>
+          </div>
+      </div>
+      <p class="w-full flex flex-row mb-5">
+        <input v-model="newTask" class="basis-3/4 bg-transparent border-0 border-b-2 rounded-none p-3 focus:outline-none border-b-slate-900 text-gray-400 placeholder:ttext-gray-400 shadow-2xl" placeholder="Add a new task"/>
+        <button @click="addTodo" class="ml-4 border-none p-4 px-6 shadow-2xl basis-1/4 bg-slate-900 text-gray-400 hover:text-gray-400 rounded-r-lg">Add</button>
       </p>
-      <div v-for="(todo, n) in todoList" :key="todo">
+      <div v-for="(todo, n) in todoList" :key="todo" class="h-full">
         
         <div v-if="editing === n">
           <EditForm :todo="todo" :saveEdit="saveEdit" />
@@ -16,6 +20,7 @@
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -23,9 +28,6 @@ import AddForm from './AddForm.vue'
 import EditForm from './EditForm.vue';
 export default {
   name: 'TodoList',
-  // props: {
-  //   todo: String,
-  // },
   components: {
     AddForm,
     EditForm
@@ -86,27 +88,4 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-.edit {
-  display: inline-flex;
-  align-items: center;
-}
-.todo {
-  flex-direction: column;
-}
-</style>
+<style></style>
