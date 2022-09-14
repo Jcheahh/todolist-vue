@@ -1,18 +1,14 @@
 <template>
-  <AppHeader />
   <TodoList />
-  
 </template>
 
 <script>
   import TodoList from './components/TodoList.vue'
-  import AppHeader from './components/AppHeader.vue'
 
 export default {
   name: 'App',
   components: {
     TodoList,
-    AppHeader,
 }
 }
 </script>
